@@ -14,4 +14,6 @@ defmodule MinibaseWeb.Router do
 
     get("/", PageController, :index)
   end
+
+  forward("/graphql", Absinthe.Plug.GraphiQL, schema: Minibase.GraphQLSchema)
 end
