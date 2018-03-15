@@ -35,6 +35,7 @@ exports.config = {
   },
 
   npm: {
-    enabled: true
+    enabled: true,
+    styles: {"react-table": ['react-table.css'] }
   }
 };
