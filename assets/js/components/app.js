@@ -6,6 +6,7 @@ import ReactTable from 'react-table'
 const GetMiniData = gql`
   query {
     minis {
+      id
       year
       number
       name
@@ -23,6 +24,7 @@ class DataSheetWrangler extends React.Component {
       <ReactTable
         columns={[
           { Header: "Number", accessor: "number" },
+          { Header: "ID", accessor: "id" },
           { Header: "Year", accessor: "year" },
           { Header: "Design", accessor: (m => m.design && m.design.name), id: "design" }
         ]}

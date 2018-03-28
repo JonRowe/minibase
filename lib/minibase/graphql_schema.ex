@@ -34,6 +34,7 @@ defmodule Minibase.GraphQLSchema do
 
   @desc "A Mini 6.50"
   object :mini do
+    field(:id, :integer)
     field(:design, :design)
     field(:name, :string)
     field(:number, :integer)
