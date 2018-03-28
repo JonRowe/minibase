@@ -8,6 +8,8 @@ defmodule Minibase.Mini do
     field(:number, :integer)
     field(:year, :string)
 
+    has_one(:last_minitransat_result, {"last_minitransat_result", Result})
+
     belongs_to(:design, Design)
     has_many(:results, Result)
 

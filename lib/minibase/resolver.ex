@@ -8,7 +8,9 @@ defmodule Minibase.Resolver do
   end
 
   def mini(%{}, _) do
-    graphql(from(m in Mini, preload: [:design], preload: [results: :race]))
+    graphql(
+      from(m in Mini, preload: [:design, :last_minitransat_result], preload: [results: :race])
+    )
   end
 
   def sailor(%{}, _) do
