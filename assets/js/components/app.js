@@ -45,11 +45,11 @@ class DataSheetWrangler extends React.Component {
     return (
       <ReactTable
         columns={[
-          { Header: "Number", accessor: "number" },
-          { Header: "ID", accessor: "id" },
-          { Header: "Year", accessor: "year" },
-          { Header: "Design", accessor: (m => m.design && m.design.name), id: "design" },
-          { Header: "Last Transat", accessor: (m => this.resultString(m.lastMinitransatResult, false)), id: "last_transat" },
+          { Header: "Number", accessor: "number", maxWidth: 75 },
+          { Header: "ID", accessor: "id", maxWidth: 75 },
+          { Header: "Year", accessor: "year", maxWidth: 75 },
+          { Header: "Design", accessor: (m => m.design && m.design.name), id: "design", maxWidth: 400 },
+          { Header: "Last Transat", accessor: (m => this.resultString(m.lastMinitransatResult, false)), id: "last_transat", maxWidth: 100 },
           { Header: "Best Results", accessor: (m => m.bestResults.map(r => this.resultString(r, true)).join('; ')), id: "best_results" }
         ]}
         data={this.props.data.minis}
