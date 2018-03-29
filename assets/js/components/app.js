@@ -15,15 +15,24 @@ const GetMiniData = gql`
         position
         date
       }
+      bestResults {
+        race { name }
+        position
+        date
+      }
     }
   }
 `
 
 class DataSheetWrangler extends React.Component {
-  resultString(result) {
+  resultString(result, displayName) {
     if(result)
     {
       var name = '#' + result.position;
+      if(displayName)
+      {
+        name = name + ' ' + result.race.name
+      }
       name = name + ', ' + result.date.replace(/-.*/,'')
       return name;
     }
@@ -40,7 +49,8 @@ class DataSheetWrangler extends React.Component {
           { Header: "ID", accessor: "id" },
           { Header: "Year", accessor: "year" },
           { Header: "Design", accessor: (m => m.design && m.design.name), id: "design" },
-          { Header: "Last Transat", accessor: (m => this.resultString(m.lastMinitransatResult)), id: "last_transat" }
+          { Header: "Last Transat", accessor: (m => this.resultString(m.lastMinitransatResult, false)), id: "last_transat" },
+          { Header: "Best Results", accessor: (m => m.bestResults.map(r => this.resultString(r, true)).join('; ')), id: "best_results" }
         ]}
         data={this.props.data.minis}
         filterable={true}

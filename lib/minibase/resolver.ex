@@ -9,7 +9,10 @@ defmodule Minibase.Resolver do
 
   def mini(%{}, _) do
     graphql(
-      from(m in Mini, preload: [:design, :last_minitransat_result], preload: [results: :race])
+      from(
+        m in Mini,
+        preload: [:design, :last_minitransat_result, best_results: :race, results: :race]
+      )
     )
   end
 

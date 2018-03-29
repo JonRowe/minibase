@@ -40,6 +40,7 @@ defmodule Minibase.GraphQLSchema do
     field(:number, :integer)
     field(:year, :string)
     field(:results, list_of(:result))
+    field(:best_results, list_of(:result))
     field(:last_minitransat_result, :result)
   end
 
