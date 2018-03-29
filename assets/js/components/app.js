@@ -20,6 +20,15 @@ const GetMiniData = gql`
 `
 
 class DataSheetWrangler extends React.Component {
+  resultString(result) {
+    if(result)
+    {
+      var name = '#' + result.position;
+      name = name + ', ' + result.date.replace(/-.*/,'')
+      return name;
+    }
+  }
+
   render () {
     if (this.props.data.loading) return <div>Loading...</div>
     if (this.props.data.error) return <div>Error!</div>
@@ -31,7 +40,7 @@ class DataSheetWrangler extends React.Component {
           { Header: "ID", accessor: "id" },
           { Header: "Year", accessor: "year" },
           { Header: "Design", accessor: (m => m.design && m.design.name), id: "design" },
-          { Header: "Last Transat", accessor: (m => m.lastMinitransatResult && "#" + m.lastMinitransatResult.position + ", " + m.lastMinitransatResult.date.replace(/-.*/,'')), id: "last_transat" }
+          { Header: "Last Transat", accessor: (m => this.resultString(m.lastMinitransatResult)), id: "last_transat" }
         ]}
         data={this.props.data.minis}
         filterable={true}
