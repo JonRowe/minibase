@@ -26,16 +26,19 @@ defmodule Minibase.Mixfile do
 
   defp deps do
     [
-      {:absinthe, "~> 1.4"},
-      {:absinthe_plug, "~> 1.4"},
-      {:phoenix, "~> 1.3.0"},
-      {:phoenix_pubsub, "~> 1.0"},
-      {:phoenix_ecto, "~> 3.2"},
+      {:absinthe, "~> 1.5"},
+      {:absinthe_plug, "~> 1.5"},
+      {:ecto_sql, "~> 3.4"},
+      {:jason, "~> 1.0"},
+      {:phoenix, "~> 1.5.0"},
+      {:phoenix_pubsub, "~> 2.0"},
+      {:phoenix_ecto, "~> 4.0"},
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:plug, "~> 1.7"},
+      {:gettext, "~> 0.11"}
     ]
   end
 

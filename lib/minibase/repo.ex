@@ -1,5 +1,5 @@
 defmodule Minibase.Repo do
-  use Ecto.Repo, otp_app: :minibase
+  use Ecto.Repo, otp_app: :minibase, adapter: Ecto.Adapters.Postgres
 
   @doc """
   Dynamically loads the repository url from the

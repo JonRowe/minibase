@@ -7,9 +7,5 @@ config :minibase, MinibaseWeb.Endpoint,
 config :logger, level: :warn
 
 config :minibase, Minibase.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
   database: "mini_test",
-  hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

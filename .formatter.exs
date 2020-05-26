@@ -1,6 +1,8 @@
 [
   inputs: [
-    "{lib,config,test}/**/*.{ex,exs}",
-    "mix.exs"
-  ]
+    "*.{ex,exs}",
+    "{config,lib,test}/**/*.{ex,exs}"
+  ],
+  import_deps: [:ecto, :phoenix],
+  subdirectories: ["priv/*/migrations"]
 ]

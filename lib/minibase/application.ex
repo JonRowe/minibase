@@ -7,7 +7,8 @@ defmodule Minibase.Application do
     Supervisor.start_link(
       [
         supervisor(Minibase.Repo, []),
-        supervisor(MinibaseWeb.Endpoint, [])
+        supervisor(MinibaseWeb.Endpoint, []),
+        {Phoenix.PubSub, [name: Minibase.PubSub, adapter: Phoenix.PubSub.PG2]}
       ],
       strategy: :one_for_one,
       name: Minibase.Supervisor
