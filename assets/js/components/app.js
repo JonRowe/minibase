@@ -1,7 +1,9 @@
 import { gql } from 'apollo-boost';
 import React from 'react'
-import { compose, graphql } from 'react-apollo';
+import { graphql } from 'react-apollo';
 import ReactTable from 'react-table'
+
+import {flowRight as compose} from 'lodash';
 
 const GetMiniData = gql`
   query {

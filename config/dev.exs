@@ -14,9 +14,10 @@ config :minibase, MinibaseWeb.Endpoint,
   ],
   watchers: [
     node: [
-      "node_modules/brunch/bin/brunch",
-      "watch",
-      "--stdin",
+      "node_modules/webpack/bin/webpack.js",
+      "--mode",
+      "development",
+      "--watch",
       cd: Path.expand("../assets", __DIR__)
     ]
   ]
