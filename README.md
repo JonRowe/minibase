@@ -1,6 +1,6 @@
 # MiniBase
 
-Stores data on minis and exposes via GraphQL.
+Stores data on Minis and exposes via GraphQL for a datatable.
 
 ## Development
 
