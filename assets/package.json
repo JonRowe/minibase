@@ -10,7 +10,7 @@
     "@babel/preset-react": "^7.12.13",
     "apollo-boost": "^0.4.9",
     "apollo-client": "^2.6.10",
-    "glob": "^7.1.6",
+    "glob": "^13.0.6",
     "graphql": "^15.5.0",
     "react": "^16.8.0",
     "react-apollo": "^3.1.5",
